@@ -1,0 +1,24 @@
+services:
+  api:
+    build: ./app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - alpine-llama
+    networks:
+      - api-network
+
+  alpine-llama:
+    image: samueltallet/alpine-llama-cpp-server
+    ports:
+      - "50000:8080"
+    environment:
+      - LLAMA_ARG_HF_REPO=bartowski/Llama-3.2-1B-Instruct-GGUF
+      - LLAMA_ARG_HF_FILE=Llama-3.2-1B-Instruct-Q8_0.gguf
+      - LLAMA_ARG_ALIAS=Llama-3.2-1B-Instruct
+      - LLAMA_API_KEY=sk-dummy
+    networks:
+      - api-network
+
+networks:
+  api-network:
