@@ -11,6 +11,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project directory
 COPY . .
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip cache purge
+
 VOLUME [ "/app" ]
 
 EXPOSE 8000

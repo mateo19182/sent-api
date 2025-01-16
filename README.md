@@ -4,6 +4,15 @@ This API provides sentiment analysis and text classification capabilities for Sp
 
 Uses <https://github.com/SamuelTallet/alpine-llama-cpp-server> and <https://github.com/pysentimiento/pysentimiento>
 
+## Todo
+
+- make api image small
+
+## Upload registry
+
+docker build -t registry.innplay.site/sent-api:latest ./app
+docker push registry.innplay.site/sent-api:latest
+
 ## Endpoints
 
 ### GET /sentiment/

@@ -1,6 +1,7 @@
 services:
   api:
-    build: ./app
+    # build: ./app
+    image: registry.innplay.site/sent-api:latest
     ports:
       - "8000:8000"
     depends_on:
@@ -13,12 +14,16 @@ services:
     ports:
       - "50000:8080"
     environment:
-      - LLAMA_ARG_HF_REPO=bartowski/Llama-3.2-1B-Instruct-GGUF
-      - LLAMA_ARG_HF_FILE=Llama-3.2-1B-Instruct-Q8_0.gguf
+      - LLAMA_ARG_MODEL=/models/Llama-3.2-1B-Instruct-Q8_0.gguf
       - LLAMA_ARG_ALIAS=Llama-3.2-1B-Instruct
+      # - LLAMA_ARG_HF_REPO=bartowski/Llama-3.2-1B-Instruct-GGUF
+      # - LLAMA_ARG_HF_FILE=Llama-3.2-1B-Instruct-Q8_0.gguf
       - LLAMA_API_KEY=sk-dummy
+    volumes:
+      - ./models:/models
     networks:
       - api-network
 
 networks:
   api-network:
+

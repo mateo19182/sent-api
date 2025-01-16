@@ -17,15 +17,15 @@ declare -a TEST_TEXTS=(
     "El gimnasio cierra muy temprano los fines de semana."
 )
 
-# Function to test the /sentiment/ endpoint
-test_sentiment_endpoint() {
-    echo "Testing /sentiment/ endpoint..."
-    for text in "${TEST_TEXTS[@]}"; do
-        echo "Text: $text"
-        curl -s -G --data-urlencode "text=$text" "$BASE_URL/sentiment/"
-        echo -e "\n"
-    done
-}
+# # Function to test the /sentiment/ endpoint
+# test_sentiment_endpoint() {
+#     echo "Testing /sentiment/ endpoint..."
+#     for text in "${TEST_TEXTS[@]}"; do
+#         echo "Text: $text"
+#         curl -s -G --data-urlencode "text=$text" "$BASE_URL/sentiment/"
+#         echo -e "\n"
+#     done
+# }
 
 # Function to test the /analyze/ endpoint
 test_analyze_endpoint() {
@@ -38,7 +38,7 @@ test_analyze_endpoint() {
 }
 
 # Run the tests
-test_sentiment_endpoint
+# test_sentiment_endpoint
 test_analyze_endpoint
 
 echo "All tests completed."
