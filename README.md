@@ -1,18 +1,13 @@
-# Api
+# Sentiment Api
 
 This API provides sentiment analysis and text classification capabilities for Spanish text encapsulated in docker.
 
-Uses <https://github.com/SamuelTallet/alpine-llama-cpp-server> and <https://github.com/pysentimiento/pysentimiento>
+Uses <https://github.com/SamuelTallet/alpine-llama-cpp-server> for running a llm in cpu and <https://github.com/pysentimiento/pysentimiento>
 
 ## Todo
 
 - secure api
-- add chat with vectordb for timetables
-- 
-## Upload registry
-
-docker build -t registry.innplay.site/sent-api:latest ./app
-docker push registry.innplay.site/sent-api:latest
+- add vectordb for rag
 
 ## Endpoints
 
