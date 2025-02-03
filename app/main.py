@@ -62,7 +62,8 @@ async def analyze_text(text: str):
 
     try:
         response = inferenceClient.chat.completions.create(
-            model="Llama-3.2-1B-Instruct",  # Replace with your actual model name
+            # model="Llama-3.2-1B-Instruct",  # Replace with your actual model name
+            model = "DeepSeek-r1-Distill-Qwen-1.5B-Q4_0",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": text}
